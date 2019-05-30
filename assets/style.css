@@ -4,25 +4,26 @@
 
 [class*"col"] {
     float: left;
-    margin: 0 auto;
     clear: both;
 }
 
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 42.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
+.col-1 {width: 8.33%; margin: 0 auto;}
+.col-2 {width: 16.66%; margin: 0 auto;}
+.col-3 {width: 25%; margin: 0 auto;}
+.col-4 {width: 33.33%; margin: 0 auto;}
+.col-5 {width: 42.66%; margin: 0 auto;}
+.col-6 {width: 50%; margin: 0 auto;}
+.col-7 {width: 58.33%; margin: 0 auto;}
+.col-8 {width: 66.66%; margin: 0 auto;}
+.col-9 {width: 75%; margin: 0 auto;}
+.col-10 {width: 83.33%; margin: 0 auto;}
+.col-11 {width: 91.66%; margin: 0 auto;}
+.col-12 {width: 100%; margin: 0 auto;}
 
 body {
-    background-color:black;
+    background-image: url(http://www.gstatic.com/tv/thumb/persons/277/277_v9_ba.jpg);
+    object-fit: cover;
+    font-family: cursive;
 }
 
 header {
@@ -31,7 +32,7 @@ header {
 }
 
 header h1 {
-    font-size: 3rem;
+    font-size: 2.75rem;
 }
 
 .row::after {
@@ -42,7 +43,16 @@ header h1 {
 
 #game {
     width: 100%;
-    height: 50%;
-    border: 1px dashed white;
-    color: white;
+    margin: 0 auto;
+    border: 1px dashed darkred;
+    color: #000001;
+    text-align: center;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+#carlin {
+    position: relative;
+    left: 22.5%;
 }
