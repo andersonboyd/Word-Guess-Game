@@ -21,10 +21,12 @@ display.textContent = displayWord;
 //guessing game itself (we need to compare the user input to the random array)
 document.onkeydown = function(event){
     userGuess.textContent = event.key;
-    wrongLetters.push(event.key);
+    if(wrongLetters.indexOf(event.key)!==-1){
+        answer.push(event.key);
+        display.textContent = answer.indexOf(event.key);  
+    }
+    else{
+        wrongLetters.push(event.key);
+        wrongBox.textContent = wrongLetters;
+    }
 }
-// document.onkeypress = function(input) {
-//     if(wrongLetters.indexOf(input.key)===-1){
-//         wrongBox.textContent = wrongLetters;
-//     }
-// }
