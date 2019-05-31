@@ -28,14 +28,14 @@ var result = document.getElementById("result")
 var guess = document.getElementById("chance");
 var randomWord = words[Math.floor(Math.random()*words.length)];
 
-function getRandom(x){
+function getRandom(){
     for(var i = 0; i < randomWord.length; i++){
         emptyWord.push("_");
     }
     display.textContent = emptyWord;
 }
 
-// function resetGame(x){
+// function resetGame(){
 //     for(var j = 0; j < randomWord.length; j++){
 //         emptyWord.splice(0,j);
 //     }
