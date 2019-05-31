@@ -19,30 +19,37 @@ var wrongLetters = [];
 var letterBank = [];
 var emptyWord =[];
 var guesses = 10;
-var index = 0;
 var mySound = new sound("images/noisemaker.mp3");
+var pictureHTML = document.getElementById("winner");
 var userGuess = document.getElementById("guess");
 var wrongBox = document.getElementById("wrongGuess");
 var display = document.getElementById("displayBlank");
 var result = document.getElementById("result")
 var guess = document.getElementById("chance");
-var pictureHTML = document.getElementById("winner");
-
-//defines random word from words array
 var randomWord = words[Math.floor(Math.random()*words.length)];
 
-//creates blanks in blank array
-for(var i = 0; i < randomWord.length; i++){
-    emptyWord.push("_");
+function getRandom(x){
+    for(var i = 0; i < randomWord.length; i++){
+        emptyWord.push("_");
+    }
+    display.textContent = emptyWord;
 }
 
-display.textContent = emptyWord;
+// function resetGame(x){
+//     for(var j = 0; j < randomWord.length; j++){
+//         emptyWord.splice(0,j);
+//     }
+//     var newWord = words[Math.floor(Math.random()*words.length)];
+//     for(var i = 0; i < newWord.length; i++){
+//         emptyWord.push("_");
+//     }
+//     display.textContent = emptyWord;
+//     wrongLetters.pop();
+//     letterBank.pop();
+//     guesses = 10;
+// }
 
-function resetGame(x){
-    location.reload();
-}
-
-//guessing game itself
+getRandom();
 document.onkeypress = function(event){
     userGuess.textContent = event.key;
     letterBank.push(event.key);
@@ -56,7 +63,6 @@ document.onkeypress = function(event){
     //blanks filling in
     if(letterBank.indexOf() === -1){
         for(var x = 0; x < randomWord.length; x++){
-            index++;
             if(randomWord[x] === event.key){
                 emptyWord[x] = event.key;
                 display.textContent = emptyWord;
@@ -86,17 +92,14 @@ document.onkeypress = function(event){
             }
             document.addEventListener("keypress", function(e){
                 if(e.keyCode == 13){
-                    resetGame();
+                    location.reload();
                 }
             });
+            resetGame();
         }
         else if (guesses === 0){
             result.textContent = "You lose! You are a good person.";
-            document.addEventListener("keypress", function(e){
-                if(e.keyCode == 13){
-                    resetGame();
-                }
-            });
+            location.reload();
         }
     }
     else{
